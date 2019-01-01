@@ -1,0 +1,22 @@
+{
+  "fitbit": {
+    "appUUID": "6527a56b-1e31-492a-9337-4c728d34bca3",
+    "appType": "app",
+    "appDisplayName": "Seconds count",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#607d8b",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Seconds count"
+      }
+    }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.0.0"
+  }
+}
