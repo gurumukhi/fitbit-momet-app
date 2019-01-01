@@ -1,3 +1,5 @@
+Moment App & ClockFace for Fitbit
+===================================
 There is neither past nor future without present, so live the moment! 
 
 This app shows the seconds you have lived so far. I hope looking at it as the number increases will motivate you to appreciate the life more & live every second!
