@@ -1,6 +1,6 @@
 <svg>
-  <text id="time" x="100%-10" y="20" fill="cyan" font-size="20" font-weight="bold" text-anchor="end" text-length="8"></text>
-  <text id="day" x="100%-10" y="40" fill="cyan" font-size="20" font-weight="bold" text-anchor="end" text-length="8"></text>
+  <text id="time" x="100%-10" y="30" fill="cyan" font-size="30" font-weight="bold" text-anchor="end" text-length="8"></text>
+  <text id="day" x="100%-10" y="50" fill="cyan" font-size="20" font-weight="bold" text-anchor="end" text-length="8"></text>
   <text id="seconds" x="10" y="50%" fill="white" font-size="40" text-anchor="start" text-length="30"></text>
   <text id="footer" x="10" y="60%" fill="red" font-size="15" font-weight="bold" text-anchor="start">SECONDS LIVED</text>
   <text id="quote" x="10" y="90%" fill="white" font-size="20" text-anchor="start">Make every second count!</text>
