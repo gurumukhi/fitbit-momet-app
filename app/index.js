@@ -1,7 +1,9 @@
 import document from "document";
 import * as messaging from "messaging";
 import clock from "clock";
+import { preferences } from "user-settings";
 
+let clockDisplay = preferences.clockDisplay;
 let background = document.getElementById("background");
 let colorSelection = 'tomato';
 let birthDateSelection = '1991-01-01';
@@ -10,9 +12,13 @@ let dayArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 
 clock.granularity = "seconds";
 clock.ontick = (evt) => {
-   document.getElementById("time").text = evt.date.toTimeString().substr(0,5);
-   document.getElementById("day").text = dayArray[new Date(evt.date).getDay()];
-}
+   let mins = evt.date.getMinutes();
+   let hours = evt.date.getHours();
+   if (clockDisplay == "12h" && hours > 12) hours-=12;
+   if (clockDisplay == "12h" && hours == 0) hours = 12;
+   document.getElementById("time").text = hours + ":" + mins;
+   document.getElementById("day").text = dayArray[evt.date.getDay()];
+};
 
 // Message is received
 messaging.peerSocket.onmessage = evt => {
@@ -20,7 +26,7 @@ messaging.peerSocket.onmessage = evt => {
   if (evt.data.key === "color" && evt.data.newValue) {
     colorSelection = JSON.parse(evt.data.newValue);
     console.log(`New color: ${colorSelection}`);
-    background.style.fill = colorSelection;
+    // background.style.fill = colorSelection;
   } else if (evt.data.key === "birthDate" && evt.data.newValue) {
     birthDateSelection = (JSON.parse(evt.data.newValue)).name;
     console.log(`New date: ${birthDateSelection}`);

@@ -2,7 +2,7 @@ function mySettings(props) {
   return (
     <Page>
       <Section
-        title={<Text bold align="center">'Seconds Count' App Settings</Text>}>
+        title={<Text bold align="center">'Moment' App Settings</Text>}>
         <TextInput
           label="Birth Date (YYYY-MM-DD)"
           settingsKey="birthDate"
