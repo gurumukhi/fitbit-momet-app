@@ -13,9 +13,15 @@ let dayArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 clock.granularity = "seconds";
 clock.ontick = (evt) => {
    let mins = evt.date.getMinutes();
+   if (mins < 10) {
+     mins = '0' + mins;
+   }
    let hours = evt.date.getHours();
    if (clockDisplay == "12h" && hours > 12) hours-=12;
    if (clockDisplay == "12h" && hours == 0) hours = 12;
+   if (hours < 10) {
+     hours = '0' + hours;
+   }
    document.getElementById("time").text = hours + ":" + mins;
    document.getElementById("day").text = dayArray[evt.date.getDay()];
 };
